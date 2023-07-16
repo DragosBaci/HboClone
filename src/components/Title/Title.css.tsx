@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { View, Text } from "react-native";
+import { Colors } from "../../utils/Colors";
 
 export const TitleContainer = styled(View)`
     flex: 1;
@@ -11,7 +12,7 @@ export const TitleText = styled(Text) <{ children: string }>`
     text-align: left;
     padding-left: 12px;
         font-size: 20px;    
-    color: white;
+    color: ${Colors.white};
 `;
 
 export const CardContainer = styled(View) <{ cardWidth: number; cardHeight: number }>`

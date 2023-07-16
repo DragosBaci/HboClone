@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-import { cards } from '../../data/data';
 import { CarouselContainer, CarouselScroll } from './Carousel.css';
 
 interface CarouselProps {
@@ -10,15 +9,23 @@ interface CarouselProps {
     activeIndex?: number;
     onScroll: (index: number) => void;
     cardStyle?: any;
+    cards: any[];
 }
 
-const Carousel: React.FC<CarouselProps> = ({ itemWidth, cardWidth, cardHeight, onScroll, cardStyle }) => {
+const Carousel: React.FC<CarouselProps> = ({
+    itemWidth,
+    cardWidth,
+    cardHeight,
+    onScroll,
+    cardStyle,
+    cards,
+}) => {
     const handleScroll = (event: any) => {
         const { contentOffset } = event.nativeEvent;
         const index = Math.floor(contentOffset.x / itemWidth);
         onScroll(index);
     };
-    const shuffledCards = cards.sort(() => Math.random() - 0.5);
+
     return (
         <CarouselContainer>
             <CarouselScroll
@@ -30,8 +37,14 @@ const Carousel: React.FC<CarouselProps> = ({ itemWidth, cardWidth, cardHeight, o
                 scrollEventThrottle={12}
                 onScroll={handleScroll}
             >
-                {shuffledCards.map((item, index) => (
-                    <Card key={index} source={item.posterUrl} cardHeight={cardHeight} cardWidth={cardWidth} cardStyle={cardStyle} />
+                {cards.map((item, index) => (
+                    <Card
+                        key={index}
+                        source={item.posterUrl}
+                        cardHeight={cardHeight}
+                        cardWidth={cardWidth}
+                        cardStyle={cardStyle}
+                    />
                 ))}
             </CarouselScroll>
         </CarouselContainer>

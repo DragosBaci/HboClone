@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { CarouselDotsContainer, Dot } from "./CarouselDots.css";
+import { Colors } from "../../utils/Colors";
 
 interface CarouselDotsProps {
     cards: Array<any>;
@@ -15,7 +15,7 @@ const CarouselDots: React.FC<CarouselDotsProps> = ({ cards, activeIndex, setActi
                 <Dot
                     key={index}
                     onPress={() => setActiveIndex(index)}
-                    style={index === activeIndex ? { backgroundColor: "rgba(216, 216, 216, 0.92)" } : null}
+                    style={index === activeIndex ? { backgroundColor: Colors.darkWhite } : null}
                 />
             ))}
         </CarouselDotsContainer>

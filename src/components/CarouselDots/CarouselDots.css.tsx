@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { View, TouchableOpacity } from "react-native";
+import { Colors } from "../../utils/Colors";
 
 export const CarouselDotsContainer = styled(View)`
     display: flex;
@@ -14,6 +15,6 @@ export const Dot = styled(TouchableOpacity)`
     border-radius: 4.5px;
     margin-left: 4.5px;
     margin-right: 4.5px;
-    background-color: rgba(148, 148, 148, 0.4);
+    background-color: ${Colors.darkGrey};
 `;
 
