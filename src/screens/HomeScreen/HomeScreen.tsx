@@ -13,9 +13,6 @@ const HomeScreen = () => {
     const handleCarouselScroll = (index: number) => {
         setActiveIndex(index);
     };
-    const handleCarouselScroll2 = (index: number) => {
-        
-    };
 
     return (
         <ScrollView style={{ backgroundColor: 'black' }}>
@@ -31,10 +28,9 @@ const HomeScreen = () => {
             <SafeAreaView>
                 <Title>Just Added</Title>
                 <Carousel
-                    itemWidth={ITEM_WIDTH}
+                    itemWidth={ITEM_WIDTH-120}
                     cardHeight={ITEM_HEIGHT - 320}
                     cardWidth={ITEM_WIDTH - 120}
-                    onScroll={handleCarouselScroll2}
                     cardStyle={styles.cardStyle}
                     cards={emmyCards}
                 />
@@ -43,7 +39,6 @@ const HomeScreen = () => {
                     itemWidth={ITEM_WIDTH - 300}
                     cardHeight={ITEM_HEIGHT - 400}
                     cardWidth={ITEM_WIDTH - 200}
-                    onScroll={handleCarouselScroll2}
                     cardStyle={styles.cardStyle}
                     cards={justAddedCards}
                 />
