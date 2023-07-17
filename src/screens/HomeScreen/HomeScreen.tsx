@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Dimensions, SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import Carousel from '../../components/Carousel/Carousel';
-import { cards } from '../../data/data';
+import { cards,emmyCards,justAddedCards } from '../../data/data';
 import CarouselDots from '../../components/CarouselDots/CarouselDots';
 import Title from '../../components/Title/Title';
+
 const HomeScreen = () => {
     const ITEM_WIDTH = Dimensions.get('window').width;
     const ITEM_HEIGHT = Dimensions.get('window').height - 150;
@@ -13,17 +14,18 @@ const HomeScreen = () => {
         setActiveIndex(index);
     };
     const handleCarouselScroll2 = (index: number) => {
-
+        
     };
 
     return (
-        <ScrollView>
+        <ScrollView style={{ backgroundColor: 'black' }}>
             <Carousel
                 itemWidth={ITEM_WIDTH}
                 cardHeight={ITEM_HEIGHT}
                 cardWidth={ITEM_WIDTH}
                 activeIndex={activeIndex}
                 onScroll={handleCarouselScroll}
+                cards={cards}
             />
             <CarouselDots cards={cards} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
             <SafeAreaView>
@@ -33,7 +35,8 @@ const HomeScreen = () => {
                     cardHeight={ITEM_HEIGHT - 320}
                     cardWidth={ITEM_WIDTH - 120}
                     onScroll={handleCarouselScroll2}
-                    cardStyle={styles.carouselContainer}
+                    cardStyle={styles.cardStyle}
+                    cards={emmyCards}
                 />
                 <Title>Emmy Nominees 2023</Title>
                 <Carousel
@@ -41,7 +44,8 @@ const HomeScreen = () => {
                     cardHeight={ITEM_HEIGHT - 400}
                     cardWidth={ITEM_WIDTH - 200}
                     onScroll={handleCarouselScroll2}
-                    cardStyle={styles.carouselContainer}
+                    cardStyle={styles.cardStyle}
+                    cards={justAddedCards}
                 />
             </SafeAreaView>
 
@@ -52,7 +56,7 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-    carouselContainer: {
+    cardStyle: {
         paddingLeft: 12,
         paddingRight: 7,
     }

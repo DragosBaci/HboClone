@@ -12,14 +12,10 @@ export const CardImage = styled(ImageBackground)`
   justify-content: center;
 `;
 
-export const Gradient = styled(LinearGradient).attrs({
-  colors: ['transparent', 'rgba(0, 0, 0, 1)'],
-
-})`
+export const Gradient = styled(LinearGradient) <{ colors: string[] }>`
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 30%;
 `;
-
