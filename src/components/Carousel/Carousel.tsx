@@ -7,7 +7,7 @@ interface CarouselProps {
     cardWidth: number;
     cardHeight: number;
     activeIndex?: number;
-    onScroll: (index: number) => void;
+    onScroll?: (index: number) => void;
     cardStyle?: any;
     cards: any[];
 }
@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({
     const handleScroll = (event: any) => {
         const { contentOffset } = event.nativeEvent;
         const index = Math.floor(contentOffset.x / itemWidth);
-        onScroll(index);
+        onScroll?.(index);
     };
 
     return (
