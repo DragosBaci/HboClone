@@ -1,26 +1,19 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
 import { TabProvider } from "./src/context/TabContext";
 import { NavigationContainer } from '@react-navigation/native';
 import RoutesMapping from "./src/routes/RoutesMapping";
+import { RootContainer } from "./Application.css";
 
-const App = () => {
+const Application = () => {
   return (
     <TabProvider>
       <NavigationContainer>
-        <View style={styles.rootScreen}>
+        <RootContainer>
           <RoutesMapping />
-        </View>
+        </RootContainer>
       </NavigationContainer>
     </TabProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  rootScreen: {
-    flex: 1,
-    backgroundColor: "black"
-  }
-});
-
-export default App;
+export default Application;

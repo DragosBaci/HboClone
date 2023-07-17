@@ -19,7 +19,7 @@ const TabRoutes: FC = () => {
         setCurrentTab(index, currentTabIndex);
     };
 
-    const renderTabBarIcon = (name:string, size:number, focused:boolean) => (
+    const renderTabBarIcon = (name: string, size: number, focused: boolean) => (
         <Icon name={name} size={size} color={focused ? Colors.white : Colors.darkGrey} />
     );
 

@@ -14,7 +14,7 @@ const HomeScreen = () => {
         setActiveIndex(index);
     };
     const handleCarouselScroll2 = (index: number) => {
-
+        
     };
 
     return (
